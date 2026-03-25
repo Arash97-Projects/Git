@@ -150,7 +150,7 @@ resource "aws_launch_template" "main" {
     security_groups             = [aws_security_group.ec2.id]
   }
 
-  user_data = base64encode(file("${path.module}/user_data.sh"))
+  user_data = base64encode(file("${path.module}/user-data.sh"))
 
   lifecycle {
     create_before_destroy = true
